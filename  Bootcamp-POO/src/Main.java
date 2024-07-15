@@ -1,9 +1,5 @@
 import java.time.LocalDate;
 
-import Curso;
-import Mentoria;
-
-
 public class Main {
         public static void main(String[] args) {
        
@@ -23,8 +19,38 @@ public class Main {
                
                 mentoria.setData(LocalDate.now());
                 mentoria.setDescricao("descrição mentoria java");
-                mentoria.setTituto("mentoria java");
+                mentoria.setTitulo("mentoria java");
                 System.out.println(mentoria);
+
+                //não da para por new em conteudo pq e uma classe abstrata 
+                Conteudo conteudo = new Curso();
+                
+
+                        Bootcamp bootcamp = new Bootcamp();
+                        bootcamp.setNome("Bootcamp java developer ");
+                        bootcamp.setDescricao("descricao bootcamp java developer");
+                        bootcamp.getConteudos().add(curso1);
+                        bootcamp.getConteudos().add(curso2);
+                        bootcamp.getConteudos().add(mentoria);
+
+                        Dev devCamila = new Dev();
+                        devCamila.setNome("Camila");
+                        devCamila.increverBootcamp(bootcamp);
+                        System.out.println("Conteudos inscritos "+devCamila.getConteudosInscritos());
+                        devCamila.progredir();
+                        System.out.println("Conteudos Concluidos "+devCamila.getConteudosConcluidos());
+
+                        System.out.println("_____________________________________________________________");
+                        Dev devJoao = new Dev();
+                         devJoao.setNome("João");
+                         devJoao.increverBootcamp(bootcamp);
+                         System.out.println("Conteudos inscritos "+devJoao.getConteudosInscritos());
+                         devJoao.progredir();
+                         System.out.println("Conteudos Concluidos "+devJoao.getConteudosConcluidos());
+
+
+
+                
 
             
         }

@@ -1,36 +1,36 @@
 import java.time.LocalDate;
 
-public class Mentoria {
-     String tituto;
-     String descricao;
-     LocalDate data;
+public class Mentoria extends Conteudo {
+     
+     private LocalDate data;
      
     public Mentoria(){
-        
+
+    }
+    
+
+    @Override
+    public double CalcularXp() {
+        return XP_PADRAO + 20 ;
     }
 
-    public String getTituto() {
-        return tituto;
+    @Override
+    public String toString() {
+        return "Mentoria [data=" + data + ", CalcularXp()=" + CalcularXp() + ", getTitulo()=" + getTitulo()
+                + ", getDescricao()=" + getDescricao() + "]";
     }
-    public void setTituto(String tituto) {
-        this.tituto = tituto;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+
+
     public LocalDate getData() {
         return data;
     }
+
+
     public void setData(LocalDate data) {
         this.data = data;
     }
-    @Override
-    public String toString() {
-        return "Mentoria [tituto: " + tituto + ", descricao: " + descricao + ", data: " + data + " ]";
-    }
+
+    
 
      
 }
